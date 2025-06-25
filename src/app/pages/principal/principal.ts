@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Navbar } from "../../components/navbar/navbar";
 import { Table } from "../../components/table/table";
 import { Footer } from "../../components/footer/footer";
+import { Database } from '../../services/database';
 
 @Component({
   selector: 'app-principal',
@@ -10,5 +11,10 @@ import { Footer } from "../../components/footer/footer";
   styleUrl: './principal.css'
 })
 export class Principal {
-
+  constructor(private database:Database){}
+  ngOnInit(){
+    this.database.getPokemon().subscribe((res:any)=>{
+      console.log(res);
+    })
+  }
 }
