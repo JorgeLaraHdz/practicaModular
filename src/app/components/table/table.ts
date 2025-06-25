@@ -14,4 +14,8 @@ productos = [
   { id: 3, nombre: 'Tablet', precio: 6000 },
 ];
 
+atrapaIndex(id:any){
+  console.log(this.productos[id]);
+}
+
 }
