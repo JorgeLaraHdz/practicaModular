@@ -1,3 +1,22 @@
 <app-navbar [nombre]="'Jorjais'"></app-navbar>
+
 <app-table></app-table>
+
+<h1>{{nombre}}</h1>
+
+<input type="text" placeholder="Buscar pokemon" class="form-control" placeholder="Buscar Pokemon" [(ngModel)]="nombre">
+<button class="btn btn-primary" (click)="atrapaPokemon()">Atrapar Pokemon</button>
+@if(pokemon.nombre==''){
+    <h1>No hay nada mi chavo</h1>
+}@else {
+  <div class="card" style="width: 18rem;">
+  <img [src]="pokemon.imagen" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{pokemon.nombre}}</h5>
+    <p class="card-text">Es tipo: {{pokemon.tipo}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+}
+
 <app-footer></app-footer>

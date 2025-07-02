@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class Database {
   constructor(private http:HttpClient) { }
   
-  public getPokemon():Observable<any>{
-    return this.http.get("https://pokeapi.co/api/v2/pokemon/pikachu");
+  public getPokemon(pokemon:String):Observable<any>{
+    return this.http.get("https://pokeapi.co/api/v2/pokemon/"+pokemon);
   }
   
 }
